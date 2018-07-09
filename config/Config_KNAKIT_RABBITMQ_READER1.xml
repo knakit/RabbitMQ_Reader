@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG_PARAMETER_INSTANCE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                           xmlns="urn:ifsworld-com:schemas:configparameterinstance_config_parameter_instance">
+    <AREA_NAME>Integration</AREA_NAME>
+    <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+    <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+    <DESCRIPTION>RabbitMQ Reader by KnakIt</DESCRIPTION>
+    <STATIC_CONFIG>0</STATIC_CONFIG>
+    <INSTANCE_TYPE>RabbitMQ</INSTANCE_TYPE>
+    <PARAMETERS>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>JAR_FILE</PARAMETER_NAME>
+            <ORDINAL>0.0</ORDINAL>
+            <PARAMETER_VALUE>$FNDEXT_HOME/javaruntime/KnakitRabbitMQReader.jar</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>Path to this connectors jar-file.</HELP_TEXT>
+            <WRITE_PROTECTED>1</WRITE_PROTECTED>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>POLL_TIME</PARAMETER_NAME>
+            <ORDINAL>1.0</ORDINAL>
+            <PARAMETER_VALUE>1000</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeNumber</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>How often in seconds the Reader should scan the RabbitMQ queue</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>HOST</PARAMETER_NAME>
+            <ORDINAL>2.0</ORDINAL>
+            <PARAMETER_VALUE>localhost</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>RabbitMQ Host Name</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>PORT</PARAMETER_NAME>
+            <ORDINAL>2.0</ORDINAL>
+            <PARAMETER_VALUE>5672</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeNumber</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>RabbitMQ Port</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>USER_NAME</PARAMETER_NAME>
+            <ORDINAL>2.0</ORDINAL>
+            <PARAMETER_VALUE>ifs</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>RabbitMQ Username</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>PASSWORD</PARAMETER_NAME>
+            <ORDINAL>2.0</ORDINAL>
+            <PARAMETER_VALUE>ifs</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeHiddenText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>Password of the RabbitMQ User</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>QUEUE_NAME</PARAMETER_NAME>
+            <ORDINAL>2.0</ORDINAL>
+            <PARAMETER_VALUE>ifs_queue</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>RabbitMQ Queue Name</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>DEBUG</PARAMETER_NAME>
+            <ORDINAL>3.0</ORDINAL>
+            <PARAMETER_VALUE>true</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeBoolean</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>Enable/disable debug information generation.</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>DEBUG_LEVEL</PARAMETER_NAME>
+            <ORDINAL>4.0</ORDINAL>
+            <PARAMETER_VALUE>HIGH</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeEnum</PARAMETER_TYPE>
+            <VALUE_LIST>LOW MEDIUM HIGH</VALUE_LIST>
+            <HELP_TEXT>The amount of debug information can be controlled using this parameter.</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>KNAKIT_RABBITMQ_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>DEBUG_FILE</PARAMETER_NAME>
+            <ORDINAL>5.0</ORDINAL>
+            <PARAMETER_VALUE>$FNDEXT_HOME/instance/$INSTANCE/logs/connectserver/KNAKIT_RABBITMQ_READER1.log</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>Specify the file to which the debug information will be written.</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+        <CONFIG_PARAMETER>
+            <AREA_NAME>Integration</AREA_NAME>
+            <GROUP_NAME>ConnectorReaders</GROUP_NAME>
+            <INSTANCE_NAME>MY_READER1</INSTANCE_NAME>
+            <PARAMETER_NAME>DEFAULT_ENCODING</PARAMETER_NAME>
+            <ORDINAL>10.0</ORDINAL>
+            <PARAMETER_VALUE>ISO-8859-1</PARAMETER_VALUE>
+            <BINARY_VALUE xsi:nil="1"/>
+            <PARAMETER_TYPE>TypeText</PARAMETER_TYPE>
+            <VALUE_LIST xsi:nil="1"/>
+            <HELP_TEXT>When converting string to byte data this encoding type will be used.</HELP_TEXT>
+            <WRITE_PROTECTED xsi:nil="1"/>
+        </CONFIG_PARAMETER>
+    </PARAMETERS>
+</CONFIG_PARAMETER_INSTANCE>

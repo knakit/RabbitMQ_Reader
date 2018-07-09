@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="connectserver">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/server/javaruntime/connectserver.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

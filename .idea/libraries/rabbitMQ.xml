@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="rabbitMQ">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/server/lib/slf4j-api-1.7.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/server/lib/slf4j-simple-1.7.22.jar!/" />
+      <root url="jar://$PROJECT_DIR$/server/lib/amqp-client-6.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

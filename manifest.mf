@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Created-By: Damith Jinasena (damithsj@gmail.com) for Knak.it (knakit.dev@gmail.com)
+Receiver-class: com.knakit.connector.reader.RabbitMQReader
+
+

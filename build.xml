@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="KnakitRabbitMQReader" default="default" basedir=".">
+   <property name="work.dir"  value="D:/Work/KnakIt/RabbitMQ/Knakit_RabbitMQ_Reader"/>
+   <property name="javaruntime"   value="${work.dir}/server/javaruntime"/>
+   <property name="distribution"  value="${work.dir}/server/dist"/>
+   <property name="lib"  value="${work.dir}/server/lib"/>
+
+   
+   <!-- set global properties for this build -->
+   <property name="src"   value="src"/>
+   <property name="build" value="classes"/>
+   <property name="dist" value="dist"/>
+
+   <property name="lib.connectserver"  value="${javaruntime}/connectserver.jar"/>
+   <property name="lib.amqp-client"  value="${lib}/amqp-client-6.0.0.jar"/>
+   <property name="lib.slf4j-api"  value="${lib}/slf4j-api-1.7.21.jar"/>
+   <property name="lib.slf4j-simple"  value="${lib}/slf4j-simple-1.7.22.jar"/>
+   <target name="init">
+      <!-- Create the time stamp -->
+      <tstamp/>
+      <!-- Create the build directory structure used by compile -->
+      <mkdir dir="${build}"/>
+      <mkdir dir="${dist}"/>
+   </target>
+
+   <target name="compile" depends="init">
+      <!-- Compile the java code from ${src} into ${build} -->
+      <javac srcdir="${src}"
+      debug="true"
+      classpath="${lib.connectserver};${lib.amqp-client};${lib.slf4j-api};${lib.slf4j-simple};"
+      optimize="yes"
+      deprecation="on"
+      source="1.7"
+      target="1.7"
+      destdir="${build}"/>
+   </target>
+  
+   <target name="dist" depends="compile">
+      <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${build}" manifest="manifest.mf"/>   
+   </target>
+    
+   <target name="all" depends="clean, init, compile, dist"/>
+
+   <target name="clean">
+      <!-- Delete the ${build} and ${dist} directory trees -->
+      <delete dir="${build}"/>
+      <delete dir="${dist}"/>
+   </target>
+
+   <!-- Group all dependencies into a big dependency-all.jar -->
+   <target name="copy-dependencies">
+
+      <mkdir dir="${dist}" />
+
+      <jar jarfile="${dist}/dependencies-all.jar">
+         <zipgroupfileset dir="${lib}">
+            <include name="**/*.jar" />
+         </zipgroupfileset>
+      </jar>
+
+   </target>
+
+   <!-- jar it, extract above dependency-all.jar and zip it with project files -->
+   <target name="package" depends="dist, copy-dependencies"
+           description="package, output to JAR">
+
+      <mkdir dir="${distribution}" />
+      <mkdir dir="${lib}" />
+
+      <jar jarfile="${dist}/${ant.project.name}.jar" basedir="${build}" manifest="manifest.mf">
+
+         <zipfileset src="${dist}/dependencies-all.jar"
+                     excludes="META-INF/*.SF" />
+      </jar>
+
+   </target>
+
+
+</project>
