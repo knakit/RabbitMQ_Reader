@@ -96,9 +96,6 @@ public class RabbitMQReader extends ConnectorAgent {
                         } catch (Exception e) {
                             fw.debug("State = INIT - Error during connection. Trying to reconnect...", 3);
                             fw.debug(getStackTrace(e), 3);
-                            fw.debug("State = INIT - Closing queue " + queueName, 3);
-                            channel.close();
-                            connection.close();
                             sleep(iPollTime);
                             state = INIT;
                         }
@@ -139,7 +136,19 @@ public class RabbitMQReader extends ConnectorAgent {
                             fw.debug("State = EXECUTE - message size: " + messageBody.length, 3);
                             fw.debug("State = EXECUTE - Sending message to IFS", 3);
                             response = this.sender.sendMessage(messageBody, "RabbitMQ_Queue_"+ queueName, "RabbitMQ_Message", this.fw);
-                            state = RESPONSE;
+
+                            if (    //(response.status == 1) || //FAILED
+                                    //(response.status == 2) || //EXECUTION_WITH_ERROR
+                                    (response.status == 4)    // EXCEPTION
+                                )
+                            {
+                                fw.debug("State = EXECUTE - Error during sending message to IFS. Trying to reconnect", 3);
+                                sleep(iPollTime);
+                                state = EXECUTE;
+                            }
+                            else {
+                                state = RESPONSE;
+                            }
                         } catch (Exception e) {
                             fw.debug("State = EXECUTE - Error during sending message to IFS. Trying to reconnect", 3);
                             fw.debug(getStackTrace(e), 3);
@@ -157,7 +166,6 @@ public class RabbitMQReader extends ConnectorAgent {
                             //----------------------------------------------------\\
                             String ifsResponse = new String(response.data);
                             fw.debug("State = RESPONSE - response message" + ifsResponse, 3);
-                            sleep(iPollTime);
 
                             if (messageCount > 0 ){
                                 fw.debug("State = RESPONSE - Start reading next message", 3);
