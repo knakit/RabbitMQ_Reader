@@ -13,77 +13,89 @@ We will update the compatibility with App10 as soon as we finish the development
 * Administrative privileges for IFS Solution Manager
 
 
-### Setup
-
+### Setup (for App8 and App9)
 * Save <a href="https://raw.githubusercontent.com/knakit/RabbitMQ_Reader/master/config/Config_KNAKIT_RABBITMQ_READER1.xml">RabbitMQ Reader Configuration file</a> to a local destination 
 * Login to IFS EE client with Administrator account
-* Setup IFS Connect
+* Setup IFS Connect, RMB on root node, Import Instance
 
-Say what the step will be
+<img src="https://raw.githubusercontent.com/knakit/RabbitMQ_Reader/master/screenshots/step1.png" alt="Import Instance">
 
+<br><br>
+
+* Change the RabbitMQ Reader settings
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+Poll Time:  Polling interval (in milliseconds)
+Host:       RabbitMQ Server
+Port:       RabbitMQ Port used by AMQP 0-9-1 
+User Name:  RabbitMQ user (user guest will not have access from remote)
+Password:   RabbitMQ user password
+Queue:      RabbitMQ queue
 ```
 
-### And coding style tests
+<img src="https://raw.githubusercontent.com/knakit/RabbitMQ_Reader/master/screenshots/step2.png" alt="RabbitMQ configurations">
 
-Explain what these tests test and why
 
+<br><br>
+
+* Add the Reader to Connect Server
+<br>
+
+<img src="https://raw.githubusercontent.com/knakit/RabbitMQ_Reader/master/screenshots/step3.png" alt="Connect Server configurations">
+
+<br><br>
+* Copy <a href="https://github.com/knakit/RabbitMQ_Reader/blob/master/server/lib/amqp-client-4.0.2.jar">amqp-client-4.0.2.jar</a>, 
+<a href="https://github.com/knakit/RabbitMQ_Reader/blob/master/server/lib/slf4j-api-1.7.21.jar">slf4j-api-1.7.21.jar</a>, 
+<a href="https://github.com/knakit/RabbitMQ_Reader/blob/master/server/lib/slf4j-simple-1.7.22.jar">slf4j-simple-1.7.22.jar</a>, 
+<a href="https://github.com/knakit/RabbitMQ_Reader/blob/master/dist/KnakitRabbitMQReader.jar">KnakitRabbitMQReader.jar</a> 
+to $IFS_HOME\javaruntime\ location
+
+<br>
+
+* Modify $IFS_HOME\instance\$INSTANCE\bin\start_connectserver1.ifm to include the dependency libraries
 ```
-Give an example
+$RABBITMQPATH=&IFS_HOME\javaruntime\amqp-client-4.0.2.jar;&IFS_HOME\javaruntime\slf4j-simple-1.7.22.jar;&IFS_HOME\javaruntime\slf4j-api-1.7.21.jar;
+$CLASSPATH=...;RABBITMQPATH
 ```
 
-## Deployment
+* Restart Connect Server
 
-Add additional notes about how to deploy this on a live system
+## Running the Tests
+
+Use the RabbitMQ <a href="https://www.rabbitmq.com/tutorials/tutorial-one-java.html">Hello World</a> example to create a simple java client to send messages to the queue. If everything works fine you should get each message as Application Message in IFS.
+
+
+## Source
+
+Source files are located in <a href="https://github.com/knakit/RabbitMQ_Reader/tree/master/src/com/knakit/connector/reader">RabbitMQ_Reader/src/com/knakit/connector/reader</a>
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [IntelliJ](https://www.jetbrains.com/idea/) - IDE
+* [Ant](https://ant.apache.org/) - Dependency Management
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Damith Jinasena** - *Initial work* - [damithsj](https://github.com/damithsj)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under Apache License 2.0 - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## About knak.it
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Knakit is a social initiative to explore the expandable capabilities of IFS applications. Our aim is to develop connectors for IFS to integrate with vast variety of applications. We believe that being social and open will achieve great heights, so our products are free and open source so anybody willing to use or contribute can join our team instantly. 
+
+We understand that upgrading IFS shouldn't be the only option for connecting to innovative technology trends such as IoT, Social connectivity, Microservices, Machine Learning... etc. and the main objective behind our initiative is to develop a product line independent of IFS version so that virtually any customer can take advantage of the modern technology revolution.
+
+Our product catalogue includes set of IFS connector readers and senders which can use out of the box and an integration framework which can use as a hub between IFS and any outside application.
+
+Our products are built as pluggable applications so no need of worrying about customizing IFS core and it will be fully compatible with upgrades.
+
+We also provide consultancy and accept custom tailored solutions for your requirements. If you have any mind-blowing ideas or integration requirements we loved to have a chat and discuss more information.
+
+Enjoy and stay in touch!
+
+Contact: <a href="mailto:knakit.dev@gmail.com">knakit.dev@gmail.com</a> 
 
