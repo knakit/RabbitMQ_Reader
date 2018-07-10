@@ -2,21 +2,22 @@
 
 RabbitMQ is the most popular open source message broker. It is lightweight and easy to deploy on premises and in the cloud and supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
 
-Our product, RabbitMQ reader for IFS is a connector agent to poll RabbitMQ queue and receive messages to IFS. It was built using RabbitMQ Java Client Library and uses uses AMQP 0-9-1 protocol.
-## Getting Started
+Our product, <b>RabbitMQ reader for IFS<sup>®</sup></b> is a connector agent to poll RabbitMQ queue and receive messages to IFS. It was built using RabbitMQ Java Client Library and uses uses AMQP 0-9-1 protocol.
 
-RabbitMQ Reader was tested 
+## Compatibility
+RabbitMQ Reader was tested in IFS App8, App9 versions. In IFS version 10, connect architecture is redesigned and this may not work. 
+We will update the compatibility with App10 as soon as we finish the development
+
 ### Prerequisites
+* <a href="https://www.rabbitmq.com/download.html">Download</a> and install RabbitMQ
+* Administrative privileges for IFS Solution Manager
 
-What things you need to install the software and how to install them
 
-```
-Give examples
-```
+### Setup
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
+* Save <a href="https://raw.githubusercontent.com/knakit/RabbitMQ_Reader/master/config/Config_KNAKIT_RABBITMQ_READER1.xml">RabbitMQ Reader Configuration file</a> to a local destination 
+* Login to IFS EE client with Administrator account
+* Setup IFS Connect
 
 Say what the step will be
 
