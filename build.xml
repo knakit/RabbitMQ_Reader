@@ -12,7 +12,7 @@
    <property name="dist" value="dist"/>
 
    <property name="lib.connectserver"  value="${javaruntime}/connectserver.jar"/>
-   <property name="lib.amqp-client"  value="${lib}/amqp-client-6.0.0.jar"/>
+   <property name="lib.amqp-client"  value="${lib}/amqp-client-4.0.2.jar"/>
    <property name="lib.slf4j-api"  value="${lib}/slf4j-api-1.7.21.jar"/>
    <property name="lib.slf4j-simple"  value="${lib}/slf4j-simple-1.7.22.jar"/>
    <target name="init">
